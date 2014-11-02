@@ -153,29 +153,29 @@ class oauth2_client_office365 extends oauth2_client
 //        error_log(__FUNCTION__ . ' ' . print_r($this->get_info(), true)); // curl info
 
         if ($this->errno) {
-        	error_log(__FUNCTION__ . '() -- error: ' . $this->error . ' -- code: ' . $this->errno);
-        	return false;
+            error_log(__FUNCTION__ . '() -- error: ' . $this->error . ' -- code: ' . $this->errno);
+            return false;
         }
 
         $json = json_decode($response);
 //        error_log(__FUNCTION__ . ' ' . print_r($json, true));
 
         if (isset($json->error)) {
-        	error_log(__FUNCTION__ . '() -- error: ' . $json->error->message . ' -- code: ' . $json->error->code);
-        	return false;
+            error_log(__FUNCTION__ . '() -- error: ' . $json->error->message . ' -- code: ' . $json->error->code);
+            return false;
         }
 
         $service = null;
         foreach ($json->value as $resource) {
-        	if ($capability == $resource->capability) {
-        		$service = $resource;
-        		break;
-        	}
+            if ($capability == $resource->capability) {
+                $service = $resource;
+                break;
+            }
         }
 
         if (empty($service)) {
-        	error_log(__FUNCTION__ . "() -- error: could not find service endpoint resource with '{$capability}' capability");
-        	return false;
+            error_log(__FUNCTION__ . "() -- error: could not find service endpoint resource with '{$capability}' capability");
+            return false;
         }
 //        error_log(__FUNCTION__ . '() -- ' . print_r($service, true));
 
@@ -279,8 +279,8 @@ class oauth2_client_office365 extends oauth2_client
             return array();
         }
         if ($this->errno) {
-        	error_log(__FUNCTION__ . '() -- error: ' . $this->error . ' -- code: ' . $this->errno);
-        	return array();
+            error_log(__FUNCTION__ . '() -- error: ' . $this->error . ' -- code: ' . $this->errno);
+            return array();
         }
         $json = json_decode($response);
 //        error_log(__FUNCTION__ . '() -- ' . print_r($json, true));
@@ -350,9 +350,9 @@ class oauth2_client_office365 extends oauth2_client
     public function get_manage_url()
     {
         if (isset($this->get_accesstoken()->service->serviceResourceId)) {
-        	return $this->get_accesstoken()->service->serviceResourceId;
+            return $this->get_accesstoken()->service->serviceResourceId;
         } else {
-        	return '';
+            return '';
         }
     }
 

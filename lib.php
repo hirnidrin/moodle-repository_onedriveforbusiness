@@ -106,7 +106,7 @@ class repository_onedriveforbusiness extends repository {
                 return;
             }
         } else {
-        	throw new Exception();
+            throw new Exception();
         }
     }
 
