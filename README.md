@@ -1,6 +1,6 @@
 ## Synopsis
 
-This is a [**Moodle**] (www.moodle.org) repository plugin to access Microsoft **OneDrive for Business** online storage, which is part of the Microsoft Office 365 Business / Enterprise / Education license plans. The plugin uses OAuth 2 to authenticate with MS Azure Active Directory, and the Office 365 REST API to get the files.
+This is a [**Moodle**](www.moodle.org) repository plugin to access Microsoft **OneDrive for Business** online storage, which is part of the Microsoft Office 365 Business / Enterprise / Education license plans. The plugin uses OAuth 2 to authenticate with MS Azure Active Directory, and the Office 365 REST API to get the files.
 
 ## Motivation
 
